@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Brant's Django Site</title>
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1>Welcome</h1>
+        <p class="lead">
+            This is the home page of Django101!
+        </p>
+        <form action="/ajax/">
+            <button class="btn btn-primary"> Go to App ajax's home page</button>
+        </form>
+    </div>
+
+{% endblock %}
