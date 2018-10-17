@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404, HttpResponse
 import datetime
-import pytz
+from pytz import timezone
 
 
 # Create your views here.
@@ -16,6 +16,6 @@ def hours_ahead(request, offset):
     except ValueError:
         raise Http404
 
-    dt = datetime.datetime.now(tz=pytz.timezone("America/Los_Angeles")) + datetime.timedelta(hours=offset)
-    html = "<html><body>In %s hour(s), it will be  %s.</body></html>" % (offset, dt)
-    return HttpResponse(html)
+    fmt = "%Y-%m-%d %H:%M:%S %Z%z"
+    dt = datetime.datetime.now(timezone('US/Pacific')) + datetime.timedelta(hours=offset)
+    return render(request, 'index.html', {'offset': offset, 'dt': dt.strftime(fmt)})
