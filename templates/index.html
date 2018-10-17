@@ -10,13 +10,32 @@
         <p class="lead">
             This is the home page of Django101!
         </p>
-        <form class="form-group" action="/ajax/">
-            <button class="btn btn-primary"> Go to App ajax's home page</button>
-        </form>
-        <form class="form-group" action="/time/plus/1">
-            <input>
-            <button class="btn btn-primary"> Demo dynamic</button>
-        </form>
     </div>
+    <section>
+        <div>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-header">
+                        Ajax Version 1
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">This is to demo ajax version 1.</p>
+                        <a class="btn btn-primary btn-lg" href="/ajax/" role="button">Learn more</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Demo Dynamic Page
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">This is to demo dynamic.</p>
+                        <a class="btn btn-primary btn-lg" href="/time/plus/1" role="button">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+        </div>
+    </section>
 
 {% endblock %}
