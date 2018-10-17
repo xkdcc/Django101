@@ -13,25 +13,47 @@
     </div>
     <section>
         <div>
-            <div class="card-deck">
+            <div class="card-deck mb-3">
                 <div class="card">
                     <div class="card-header">
-                        Ajax Version 1
+                        Ajax Version 1 - no json, no server side RESTAPI
                     </div>
                     <div class="card-body">
                         <p class="card-text">This is to demo ajax version 1.</p>
-                        <a class="btn btn-primary btn-lg" href="/ajax/" role="button">Learn more</a>
+                        <a class="btn btn-primary btn-lg" href="/ajax/v1" role="button">Learn more</a>
                     </div>
                 </div>
+                <div class="card">
+                    <div class="card-header">
+                        Ajax Version 2 - using json, no server side RESTAPI
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">This is to demo ajax version 2.</p>
+                        <a class="btn btn-primary btn-lg" href="/ajax/v2" role="button">Learn more</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Ajax Version 3 - using json, server side RESTAPI
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">This is to demo ajax version 3.</p>
+                        <a class="btn btn-primary btn-lg" href="/ajax/v3" role="button">Learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-deck">
+
                 <div class="card">
                     <div class="card-header">
                         Demo Dynamic Page
                     </div>
                     <div class="card-body">
                         <p class="card-text">This is to demo dynamic.</p>
-                        <a class="btn btn-primary btn-lg" href="/time/plus/1" role="button">Now plus one hour in US/Pacific: /time/plus/1</a>
+                        <a class="btn btn-primary btn-lg" href="/time/plus/1" role="button">Now plus one hour in
+                            US/Pacific: /time/plus/1</a>
                         {% if offset and dt %}
-                        <p class="card-text"> In {{ offset }} hour(s), it will be {{ dt }}.</p>
+                            <p class="card-text"> In {{ offset }} hour(s), it will be {{ dt }}.</p>
                         {% endif %}
 
                     </div>
@@ -40,7 +62,6 @@
 </code></pre>
                     </div>
                 </div>
-
             </div>
         </div>
         </div>
