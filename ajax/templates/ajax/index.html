@@ -7,16 +7,34 @@
 {% block content %}
     <div class="container mt-4">
         <div class="jumbotron">
-            <h1>Ajax Version {{ version }}</h1>
-            <p class="lead">
-                This is the home page of app Ajax version {{ version }}!
-            </p>
+            <h1>Ajax Demo</h1>
         </div>
     </div>
+
     <div class="container mt-4 form-group">
-    <form action="/create_post/" method="POST" id="post-form" >
-        <input class="form-control" value="Test">
-    </form>
+
+        <div class="card">
+            <div class="card-header">
+                Ajax V1
+            </div>
+            <div class="card-body">
+
+
+                <div class="form-group">
+                    {#                    <form class="form-inline" action="/demo_ajax_v1_addition" method="POST" id="a1-demo-add-form">#}
+                    <form class="form-inline" action="{% url 'demo_ajax_v1_addition' %}" method="POST" id="a1-demo-add-form">
+                        {% csrf_token %}
+                        <input class="form-control mr-2" placeholder="addend">
+                        <i class="fas fa-plus"></i>
+                        <input class="form-control mr-2 ml-2" placeholder="addend">
+                        <i class="fas fa-equals"></i> <input class="form-control ml-2 mr-2" placeholder="sum">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-calculator mr-2"></i>Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
 
     </div>
 

@@ -5,16 +5,16 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'ajax/index.html', {'version': 'v1'})
+    return render(request, 'ajax/index.html')
 
 
-def v1(request):
-    return render(request, 'ajax/index.html', {'version': 'v1'})
+def demo_ajax_v1_addition(request):
+    return render(request, 'ajax/index.html')
 
 
-def v2(request):
-    return render(request, 'ajax/index.html', {'version': 'v2'})
+def demo_ajax_v2_addition(request):
+    return render(request, 'ajax/index.html')
 
 
-def v3(request):
-    return render(request, 'ajax/index.html', {'version': 'v3'})
+def demo_ajax_v3_addition(request):
+    return render(request, 'ajax/index.html')
