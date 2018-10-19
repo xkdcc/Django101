@@ -21,13 +21,12 @@
 
 
                 <div class="form-group">
-                    {#                    <form class="form-inline" action="/demo_ajax_v1_addition" method="POST" id="a1-demo-add-form">#}
-                    <form class="form-inline" action="{% url 'demo_ajax_v1_addition' %}" method="POST" id="a1-demo-add-form">
+                    <form class="form-inline" action="{% url 'demo_ajax_v1_addition' %}" method="GET" id="a1-demo-add-form">
                         {% csrf_token %}
-                        <input class="form-control mr-2" placeholder="addend">
+                        <input class="form-control mr-2" placeholder="addend" name="addend1">
                         <i class="fas fa-plus"></i>
-                        <input class="form-control mr-2 ml-2" placeholder="addend">
-                        <i class="fas fa-equals"></i> <input class="form-control ml-2 mr-2" placeholder="sum">
+                        <input class="form-control mr-2 ml-2" placeholder="addend" name="addend2">
+                        <i class="fas fa-equals"></i> <input class="form-control ml-2 mr-2" placeholder="results" name="results">
                         <button type="submit" class="btn btn-primary"><i class="fas fa-calculator mr-2"></i>Submit
                         </button>
                     </form>
