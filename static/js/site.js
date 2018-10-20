@@ -12,7 +12,7 @@ $(document).ready(function () {
         console.log($('input[name="addend1"]').val())
         console.log($('input[name="addend2"]').val())
         $.ajax({
-            url: "/ajax/demo_ajax_v1_addition", // the endpoint
+            url: "/ajax/demo_ajax_v2_addition", // the endpoint
             type: "POST", // http method
             data: {
                 addend1: $('input[name="addend1"]').val(),
