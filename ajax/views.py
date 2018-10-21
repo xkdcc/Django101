@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse, JsonResponse
 import json
 
 
@@ -20,8 +20,11 @@ def demo_ajax_v2_addition(request):
         addend1 = int(request.POST['addend1'])
         addend2 = int(request.POST['addend2'])
         response_data['results'] = str(addend1 + addend2)
-        data = json.dumps(response_data)
-        return HttpResponse(data, content_type='application/json')
+        return JsonResponse(response_data)
+        # Note:
+        # Instead of using below code, in Django 1.7, we can use JsonResponse now.
+        # data = json.dumps(response_data)
+        # return HttpResponse(data, content_type='application/json')
     else:
         return render(request, 'ajax/index.html')
 

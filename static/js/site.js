@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $('#a1-demo-add-form').on('submit', function (event) {
+    $('#ajax_v2_demo_add_form').on('submit', function (event) {
         event.preventDefault();
         console.log("form submitted!")  // sanity check
         do_add();
@@ -9,21 +9,21 @@ $(document).ready(function () {
     // AJAX for posting
     function do_add() {
         console.log("add[post] is working!") // sanity check
-        console.log($('input[name="addend1"]').val())
-        console.log($('input[name="addend2"]').val())
+        console.log($('input[name="v2_addend1"]').val())
+        console.log($('input[name="v2_addend2"]').val())
         $.ajax({
             url: "/ajax/demo_ajax_v2_addition", // the endpoint
             type: "POST", // http method
             data: {
-                addend1: $('input[name="addend1"]').val(),
-                addend2: $('input[name="addend2"]').val(),
+                addend1: $('input[name="v2_addend1"]').val(),
+                addend2: $('input[name="v2_addend2"]').val(),
             }, // data sent with the post request
 
             // handle a successful response
             success: function (json) {
-                $('input[name="results"]').val(''); // remove the value from the input
+                $('input[name="v2_results"]').val(''); // remove the value from the input
                 console.log(json); // log the returned json to the console
-                $('input[name="results"]').val(json.results)
+                $('input[name="v2_results"]').val(json.results)
                 console.log("success"); // another sanity check
             },
 

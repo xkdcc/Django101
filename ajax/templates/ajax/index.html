@@ -21,7 +21,17 @@
 
 
                 <div class="form-group">
-
+                    <form class="form-inline" action="{% url 'demo_ajax_v1_addition' %}" method="GET"
+                          id="ajax_v1_demo_add_form">
+                        {% csrf_token %}
+                        <input class="form-control mr-2" placeholder="addend" name="v1_addend1">
+                        <i class="fas fa-plus"></i>
+                        <input class="form-control mr-2 ml-2" placeholder="addend" name="v1_addend2">
+                        <i class="fas fa-equals"></i> <input class="form-control ml-2 mr-2" placeholder="results"
+                                                             name="results">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-calculator mr-2"></i>Submit
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -31,17 +41,15 @@
                 Ajax V2 - jQuery + Json
             </div>
             <div class="card-body">
-
-
                 <div class="form-group">
                     <form class="form-inline" action="{% url 'demo_ajax_v2_addition' %}" method="GET"
-                          id="a1-demo-add-form">
+                          id="ajax_v2_demo_add_form">
                         {% csrf_token %}
-                        <input class="form-control mr-2" placeholder="addend" name="addend1">
+                        <input class="form-control mr-2" placeholder="addend" name="v2_addend1">
                         <i class="fas fa-plus"></i>
-                        <input class="form-control mr-2 ml-2" placeholder="addend" name="addend2">
+                        <input class="form-control mr-2 ml-2" placeholder="addend" name="v2_addend2">
                         <i class="fas fa-equals"></i> <input class="form-control ml-2 mr-2" placeholder="results"
-                                                             name="results">
+                                                             name="v2_results">
                         <button type="submit" class="btn btn-primary"><i class="fas fa-calculator mr-2"></i>Submit
                         </button>
                     </form>
