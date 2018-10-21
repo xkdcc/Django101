@@ -11,14 +11,20 @@ def home(request):
 
 
 def demo_ajax_v1_addition(request):
-    return render(request, 'ajax/index.html')
+    if request.method == 'POST':
+        addend1 = int(request.POST['v1_addend1'])
+        addend2 = int(request.POST['v1_addend2'])
+        data = addend1 + addend2
+        return HttpResponse(data)
+    else:
+        return render(request, 'ajax/index.html')
 
 
 def demo_ajax_v2_addition(request):
     if request.is_ajax() and request.method == 'POST':
         response_data = {}
-        addend1 = int(request.POST['addend1'])
-        addend2 = int(request.POST['addend2'])
+        addend1 = int(request.POST['v2_addend1'])
+        addend2 = int(request.POST['v2_addend2'])
         response_data['results'] = str(addend1 + addend2)
         return JsonResponse(response_data)
         # Note:

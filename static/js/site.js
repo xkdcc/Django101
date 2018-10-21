@@ -1,13 +1,54 @@
 $(document).ready(function () {
 
-    $('#ajax_v2_demo_add_form').on('submit', function (event) {
+    // ++++++++++++++++++++ ajax_v1_demo_add_form ++++++++++++++++++++
+    $('#ajax_v1_demo_add_form').on('submit', function (event) {
         event.preventDefault();
-        console.log("form submitted!")  // sanity check
-        do_add();
+        console.log("ajax_v1_demo_add_form submitted!") // sanity check
+        do_add_v1();
     });
 
     // AJAX for posting
-    function do_add() {
+    function do_add_v1() {
+        console.log("add[post] is working!") // sanity check
+        console.log($('input[name="v1_addend1"]').val())
+        console.log($('input[name="v1_addend2"]').val())
+        $.ajax({
+            url: "/ajax/demo_ajax_v1_addition", // the endpoint
+            type: "POST", // http method
+            data: {
+                v1_addend1: $('input[name="v1_addend1"]').val(),
+                v1_addend2: $('input[name="v1_addend2"]').val(),
+            }, // data sent with the post request
+
+            // handle a successful response
+            success: function (data) {
+                $('input[name="v1_results"]').val(''); // remove the value from the input
+                console.log(data); // log the returned data to the console
+                $('input[name="v1_results"]').val(data)
+                console.log("success"); // another sanity check
+            },
+
+            // handle a non-successful response
+            error: function (xhr, errmsg, err) {
+                $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " + errmsg +
+                    " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+            }
+        });
+    };
+
+
+
+
+    // ++++++++++++++++++++ ajax_v2_demo_add_form ++++++++++++++++++++
+    $('#ajax_v2_demo_add_form').on('submit', function (event) {
+        event.preventDefault();
+        console.log("ajax_v2_demo_add_form submitted!")  // sanity check
+        do_add_v2();
+    });
+
+    // AJAX for posting
+    function do_add_v2() {
         console.log("add[post] is working!") // sanity check
         console.log($('input[name="v2_addend1"]').val())
         console.log($('input[name="v2_addend2"]').val())
@@ -15,8 +56,8 @@ $(document).ready(function () {
             url: "/ajax/demo_ajax_v2_addition", // the endpoint
             type: "POST", // http method
             data: {
-                addend1: $('input[name="v2_addend1"]').val(),
-                addend2: $('input[name="v2_addend2"]').val(),
+                v2_addend1: $('input[name="v2_addend1"]').val(),
+                v2_addend2: $('input[name="v2_addend2"]').val(),
             }, // data sent with the post request
 
             // handle a successful response
