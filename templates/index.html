@@ -13,59 +13,76 @@
     </div>
     <section>
         <div>
-            <div class="card-deck mb-3">
-                <div class="card">
-                    <div class="card-header">
-                        Ajax Version 1 - no json, no server side RESTAPI
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">This is to demo ajax version 1.</p>
-                        <a class="btn btn-primary btn-lg" href="/ajax" role="button">Learn more</a>
-                    </div>
+            <div class="card mb-2">
+                <div class="card-header bg-info">
+                    Reference
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        Ajax Version 2 - using json, no server side RESTAPI
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">This is to demo ajax version 2.</p>
-                        <a class="btn btn-primary btn-lg" href="/ajax/v2" role="button">Learn more</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        Ajax Version 3 - using json, server side RESTAPI
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">This is to demo ajax version 3.</p>
-                        <a class="btn btn-primary btn-lg" href="/ajax/v3" role="button">Learn more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-deck">
-
-                <div class="card">
-                    <div class="card-header">
-                        Demo Dynamic Page
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">This is to demo dynamic.</p>
-                        <a class="btn btn-primary btn-lg" href="/time/plus/1" role="button">Now plus one hour in
-                            US/Pacific: /time/plus/1</a>
-                        {% if offset and dt %}
-                            <p class="card-text"> In {{ offset }} hour(s), it will be {{ dt }}.</p>
-                        {% endif %}
-
-                    </div>
-                    <div class="card-footer">
-                    <pre><code>re_path(r'^time/plus/(\d{1,2})/$', views.hours_ahead)
-</code></pre>
-                    </div>
+                <div class="card-body">
+                    <ol>
+                        <li><a href="http://json.org/">http://json.org/</a></li>
+                        <i>Remember to use double quotes.</i>
+                    </ol>
                 </div>
             </div>
         </div>
-        </div>
-        <div>
+    </section>
+
+    <section>
+        <div class="card">
+            <div class="card-header bg-info">
+                Demo
+            </div>
+            <div class="card-body">
+                <div class="card-deck mb-3">
+                    <div class="card">
+                        <div class="card-header">
+                            Ajax Version 1 - no json, no server side RESTAPI
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">This is to demo ajax version 1.</p>
+                            <a class="btn btn-primary btn-sm" href="/ajax" role="button">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            Ajax Version 2 - using json, no server side RESTAPI
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">This is to demo ajax version 2.</p>
+                            <a class="btn btn-primary btn-sm" href="/ajax/v2" role="button">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            Ajax Version 3 - using json, server side RESTAPI
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">This is to demo ajax version 3.</p>
+                            <a class="btn btn-primary btn-sm" href="/ajax/v3" role="button">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck">
+
+                    <div class="card">
+                        <div class="card-header">
+                            Demo Dynamic Page
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">This is to demo dynamic.</p>
+                            <a class="btn btn-primary btn-sm" href="/time/plus/1" role="button">Now plus one hour in
+                                US/Pacific: /time/plus/1</a>
+                            {% if offset and dt %}
+                                <p class="card-text"> In {{ offset }} hour(s), it will be {{ dt }}.</p>
+                            {% endif %}
+
+                        </div>
+                        <div class="card-footer">
+                            <pre><code>re_path(r'^time/plus/(\d{1,2})/$', views.hours_ahead)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
