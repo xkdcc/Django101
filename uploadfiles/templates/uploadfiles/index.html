@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Brant's Django Site</title>
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1>Welcome</h1>
+        <p class="lead">
+            This is the home page of Django101!
+        </p>
+    </div>
+    <section>
+        <div>
+            <div class="card mb-2">
+                <div class="card-header">
+                    Reference
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li><a href="http://json.org/">http://json.org/</a></li>
+                        <i>Remember to use double quotes.</i>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div class="card mb-2">
+                <div class="card-header">
+                    Notes
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li>N/A</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="card">
+            <div class="card-header bg-info">
+                Demo
+            </div>
+            <div class="card-body">
+                <div class="card-deck mb-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <p>Upload file Demo - Basic</p>
+                        </div>
+                        <div class="card-body">
+                            <a class="btn btn-primary btn-sm" href="{% url 'uploadfiles:home' %}" role="button">Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
