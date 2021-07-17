@@ -17,6 +17,7 @@ Including another URLconf
 from django.urls import path
 from . import views
 
+app_name = 'ajax'
 urlpatterns = [
     path('', views.home, name='home'),
     path('demo_ajax_v1_addition', views.demo_ajax_v1_addition, name='demo_ajax_v1_addition'),

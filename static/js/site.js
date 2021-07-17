@@ -37,9 +37,6 @@ $(document).ready(function () {
         });
     };
 
-
-
-
     // ++++++++++++++++++++ ajax_v2_demo_add_form ++++++++++++++++++++
     $('#ajax_v2_demo_add_form').on('submit', function (event) {
         event.preventDefault();
@@ -61,6 +58,8 @@ $(document).ready(function () {
             }, // data sent with the post request
 
             // handle a successful response
+            // Please note: 
+            // Now in ajax v2 we're using "json" not "data" as in ajax v1!!!
             success: function (json) {
                 $('input[name="v2_results"]').val(''); // remove the value from the input
                 console.log(json); // log the returned json to the console

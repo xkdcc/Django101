@@ -52,18 +52,27 @@
                 <div class="card-deck mb-3">
                     <div class="card">
                         <div class="card-header">
+                            <p>Upload file Demo</p>
+                        </div>
+                        <div class="card-body">
+                            <a class="btn btn-primary btn-sm" href="{% url 'uploadfiles:home' %}" role="button">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3">
+                    <div class="card">
+                        <div class="card-header">
                             <p>Ajax Demo</p>
                         </div>
                         <div class="card-body">
                             <p>Ajax Version 1 - no json, no server side RESTAPI</p>
                             <p>Ajax Version 2 - json, no server side RESTAPI</p>
                             <p>Ajax Version 3 - json, with server side RESTAPI</p>
-                            <a class="btn btn-primary btn-sm" href="/ajax" role="button">Learn more</a>
+                            <a class="btn btn-primary btn-sm" href="{% url 'ajax:home' %}" role="button">Learn more</a>
                         </div>
                     </div>
                 </div>
                 <div class="card-deck">
-
                     <div class="card">
                         <div class="card-header">
                             Demo Dynamic Page

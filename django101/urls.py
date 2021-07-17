@@ -19,7 +19,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
-    path('ajax/', include('ajax.urls'), name='ajax'),
+    path('', views.home, name='home'),
+    path('uploadfiles/', include('uploadfiles.urls', namespace='uploadfiles')),
+    path('ajax/', include('ajax.urls', namespace='ajax')),
     re_path(r'^time/plus/(\d{1,2})/$', views.hours_ahead)
 ]
