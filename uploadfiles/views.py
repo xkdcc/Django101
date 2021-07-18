@@ -7,7 +7,7 @@ from django.contrib import messages
 
 # Create your views here.
 def home(request):
-    return demo_uploadfiles_v1(request)
+    return render(request, 'uploadfiles/index.html')
 
 
 def demo_uploadfiles_v1(request):    
@@ -27,5 +27,12 @@ def demo_uploadfiles_v1(request):
             
         messages.add_message(request, messages.SUCCESS, "Upload {} successfully!".format(file.name))
         
-        return render(request, 'uploadfiles/index.html', )
+        return render(request, 'uploadfiles/index.html', context = {'version': "v1"})
     return render(request, 'uploadfiles/index.html')
+
+def demo_uploadfiles_v2(request):    
+    '''
+    Using form but NO model
+    '''    
+    
+    return render(request, 'uploadfiles/index.html', context = {'version': "v2"})

@@ -10,20 +10,20 @@
   <div class="card">
     <div class="card-header bg-info">Demo</div>
     <div class="card-body">
-      <div class="card-deck mb-3">
-        <div class="card">
+      <div class="mb-3">
+        <div class="card mt-1">
           <div class="card-header">
-            <p>Upload file Demo - Basic</p>
+            <p>V1 - Basic: Upload file Demo</p>
           </div>
           <div class="card-body">
-            <form action="{% url 'uploadfiles:home' %}" method="post" enctype="multipart/form-data">
+            <form action="{% url 'uploadfiles:v1' %}" method="post" enctype="multipart/form-data">
               {% csrf_token %}
               <label for="file">Filename:</label>
               <input type="file" name="myfile" />
               <br />
               <input type="submit" name="submit" value="Submit" />
             </form>
-            {% if messages %}
+            {% if messages and version == "v1" %}
               {% for message in messages %}
                 <div class="alert {{ message.tags }} mb-0" id="msg" role="alert">
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -31,8 +31,32 @@
                   </button>
                   {{ message }}
                 </div>
-        {% endfor %}
-      {% endif %} 
+              {% endfor %}
+            {% endif %} 
+          </div>
+        </div>
+        <div class="card mt-1">
+          <div class="card-header">
+            <p>V2 - Upload file Demo with Form but no Model</p>
+          </div>
+          <div class="card-body">
+            <form action="{% url 'uploadfiles:v2' %}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <label for="file">Filename:</label>
+              <input type="file" name="v2file" />
+              <br />
+              <input type="submit" name="submit" value="Submit" />
+            </form>
+            {% if messages and version == "v2" %}
+              {% for message in messages %}
+                <div class="alert {{ message.tags }} mb-0" id="msg" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %} 
           </div>
         </div>
       </div>
