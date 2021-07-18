@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.home, name='home'), 
     path('v1/', views.demo_uploadfiles_v1, name='v1'), 
     path('v2/', views.demo_uploadfiles_v2, name='v2'), 
+    path('v3/', views.demo_uploadfiles_v3, name='v3'), 
 ]

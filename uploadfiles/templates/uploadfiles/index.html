@@ -65,6 +65,33 @@
             {% endif %} 
           </div>
         </div>
+        <div class="card my-2">
+          <div class="card-header pb-0">
+            V3 - Upload file Demo (frontend using forms.py but without Model involved). <br>
+            <b>Difference with V1/V2: </b>
+            <ul>
+              <li>No form UI defined in html but in forms.py.
+            </ul>
+          </div>
+          <div class="card-body py-2">
+            <form action="{% url 'uploadfiles:v3' %}" method="post" enctype="multipart/form-data" class="my-2">
+              {% csrf_token %}
+              {{ form }}
+              <br />
+              <input type="submit" name="submit" value="Submit" />
+            </form>
+            {% if messages and version == "v3" %}
+              {% for message in messages %}
+                <div class="alert {{ message.tags }} my-1" id="msg" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %} 
+          </div>
+        </div>
     </div>
   </div>
 </section>
