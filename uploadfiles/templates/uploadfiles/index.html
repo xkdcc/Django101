@@ -9,14 +9,13 @@
 <section>
   <div class="card">
     <div class="card-header bg-info">Demo</div>
-    <div class="card-body">
-      <div class="mb-3">
-        <div class="card mt-1">
+    <div class="card-body py-2">
+        <div class="card my-2">
           <div class="card-header">
-            <p>V1 - Basic: Upload file Demo</p>
+            V1 - Basic: Upload file Demo
           </div>
-          <div class="card-body">
-            <form action="{% url 'uploadfiles:v1' %}" method="post" enctype="multipart/form-data">
+          <div class="card-body py-2">
+            <form action="{% url 'uploadfiles:v1' %}" method="post" enctype="multipart/form-data" class="my-2">
               {% csrf_token %}
               <label for="file">Filename:</label>
               <input type="file" name="myfile" />
@@ -25,7 +24,7 @@
             </form>
             {% if messages and version == "v1" %}
               {% for message in messages %}
-                <div class="alert {{ message.tags }} mb-0" id="msg" role="alert">
+                <div class="alert {{ message.tags }} my-1" id="msg" role="alert">
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -35,12 +34,11 @@
             {% endif %} 
           </div>
         </div>
-        <div class="card mt-1">
-          <div class="card-header">
-            <p>V2 - Upload file Demo with Form but no Model</p>
+        <div class="card my-2">
+          <div class="card-header">V2 - Upload file Demo with Form but no Model
           </div>
-          <div class="card-body">
-            <form action="{% url 'uploadfiles:v2' %}" method="post" enctype="multipart/form-data">
+          <div class="card-body py-2">
+            <form action="{% url 'uploadfiles:v2' %}" method="post" enctype="multipart/form-data" class="my-2">
               {% csrf_token %}
               <label for="file">Filename:</label>
               <input type="file" name="v2file" />
@@ -49,7 +47,7 @@
             </form>
             {% if messages and version == "v2" %}
               {% for message in messages %}
-                <div class="alert {{ message.tags }} mb-0" id="msg" role="alert">
+                <div class="alert {{ message.tags }} my-1" id="msg" role="alert">
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -59,7 +57,6 @@
             {% endif %} 
           </div>
         </div>
-      </div>
     </div>
   </div>
 </section>
