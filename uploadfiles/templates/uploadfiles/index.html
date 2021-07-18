@@ -12,13 +12,13 @@
     <div class="card-body py-2">
         <div class="card my-2">
           <div class="card-header">
-            V1 - Basic: Upload file Demo
+            V1 - Basic: Upload file Demo by using open/write/close
           </div>
           <div class="card-body py-2">
             <form action="{% url 'uploadfiles:v1' %}" method="post" enctype="multipart/form-data" class="my-2">
               {% csrf_token %}
               <label for="file">Filename:</label>
-              <input type="file" name="myfile" />
+              <input type="file" name="v1file" />
               <br />
               <input type="submit" name="submit" value="Submit" />
             </form>
@@ -35,7 +35,15 @@
           </div>
         </div>
         <div class="card my-2">
-          <div class="card-header">V2 - Upload file Demo with Form but no Model
+          <div class="card-header pb-0">
+            V2 - Upload file Demo by using FileSystemStorage. <br>
+            <b>Difference with V1 because of using FileSystemStorage: </b>
+            <ul>
+              <li>It will create a new file if file with same name exists.
+              <br>
+              This behavior can be overridden please refer to link at reference panel.</li>
+              <li>It can get file's url easily.</li>
+            </ul>
           </div>
           <div class="card-body py-2">
             <form action="{% url 'uploadfiles:v2' %}" method="post" enctype="multipart/form-data" class="my-2">
@@ -66,8 +74,7 @@
     <div class="card-header bg-info">Reference</div>
     <div class="card-body">
       <ol>
-        <li><a href="http://json.org/">N/A</a></li>
-        <i>N/A</i>
+        <li><a href="https://gist.github.com/fabiomontefuscolo/1584462">Overwrite same file for FileSystemStorage.</a></li>
       </ol>
     </div>
   </div>
