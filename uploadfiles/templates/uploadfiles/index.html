@@ -1,65 +1,66 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %}
+<title>Brant's Django Site</title>
+{% endblock %} {% block content %}
+<div class="jumbotron">
+  <h1>Welcome</h1>
+  <p class="lead">Demo File Upload</p>
+</div>
 
-{% block title %}
-    <title>Brant's Django Site</title>
-{% endblock %}
-
-{% block content %}
-    <div class="jumbotron">
-        <h1>Welcome</h1>
-        <p class="lead">
-            This is the home page of Django101!
-        </p>
-    </div>
-    <section>
-        <div>
-            <div class="card mb-2">
-                <div class="card-header">
-                    Reference
-                </div>
-                <div class="card-body">
-                    <ol>
-                        <li><a href="http://json.org/">http://json.org/</a></li>
-                        <i>Remember to use double quotes.</i>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div>
-            <div class="card mb-2">
-                <div class="card-header">
-                    Notes
-                </div>
-                <div class="card-body">
-                    <ol>
-                        <li>N/A</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
+<section>
+  <div class="card">
+    <div class="card-header bg-info">Demo</div>
+    <div class="card-body">
+      <div class="card-deck mb-3">
         <div class="card">
-            <div class="card-header bg-info">
-                Demo
-            </div>
-            <div class="card-body">
-                <div class="card-deck mb-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <p>Upload file Demo - Basic</p>
-                        </div>
-                        <div class="card-body">
-                            <a class="btn btn-primary btn-sm" href="{% url 'uploadfiles:home' %}" role="button">Demo</a>
-                        </div>
-                    </div>
+          <div class="card-header">
+            <p>Upload file Demo - Basic</p>
+          </div>
+          <div class="card-body">
+            <form action="{% url 'uploadfiles:home' %}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <label for="file">Filename:</label>
+              <input type="file" name="myfile" />
+              <br />
+              <input type="submit" name="submit" value="Submit" />
+            </form>
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert {{ message.tags }} mb-0" id="msg" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  {{ message }}
                 </div>
-            </div>
+        {% endfor %}
+      {% endif %} 
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card mt-1">
+    <div class="card-header bg-info">Reference</div>
+    <div class="card-body">
+      <ol>
+        <li><a href="http://json.org/">N/A</a></li>
+        <i>N/A</i>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card mt-1">
+    <div class="card-header bg-info">Notes</div>
+    <div class="card-body">
+      <ol>
+        <li>N/A</li>
+      </ol>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
