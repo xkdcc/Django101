@@ -5,6 +5,10 @@ import json
 
 # Create your views here.
 
+# HttpRequest.is_ajax() method is deprecated in Django 3.1
+# This is our own AJAX detection method.
+def is_ajax(request):
+    return request.headers.get('X-Requested-With') == 'XMLHttpRequest'
 
 def home(request):
     return demo_ajax_v1_addition(request)
@@ -21,7 +25,7 @@ def demo_ajax_v1_addition(request):
 
 
 def demo_ajax_v2_addition(request):
-    if request.is_ajax() and request.method == 'POST':
+    if is_ajax(request) and request.method == 'POST':
         response_data = {}
         addend1 = int(request.POST['v2_addend1'])
         addend2 = int(request.POST['v2_addend2'])

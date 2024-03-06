@@ -25,7 +25,7 @@
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <form class="form-inline" action="{% url 'demo_ajax_v1_addition' %}" method="GET"
+                    <form class="form-inline" action="{% url 'ajax:demo_ajax_v1_addition' %}" method="GET"
                           id="ajax_v1_demo_add_form">
                         {% csrf_token %}
                         <input class="form-control mr-2" placeholder="addend" name="v1_addend1">
@@ -46,7 +46,7 @@
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <form class="form-inline" action="{% url 'demo_ajax_v2_addition' %}" method="GET"
+                    <form class="form-inline" action="{% url 'ajax:demo_ajax_v2_addition' %}" method="GET"
                           id="ajax_v2_demo_add_form">
                         {% csrf_token %}
                         <input class="form-control mr-2" placeholder="addend" name="v2_addend1">

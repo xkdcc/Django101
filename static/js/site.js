@@ -13,7 +13,7 @@ $(document).ready(function () {
         console.log($('input[name="v1_addend1"]').val())
         console.log($('input[name="v1_addend2"]').val())
         $.ajax({
-            url: "/ajax/demo_ajax_v1_addition", // the endpoint
+            url: "/ajax/demo_ajax_v1_addition/", // the endpoint
             type: "POST", // http method
             data: {
                 v1_addend1: $('input[name="v1_addend1"]').val(),
@@ -50,7 +50,7 @@ $(document).ready(function () {
         console.log($('input[name="v2_addend1"]').val())
         console.log($('input[name="v2_addend2"]').val())
         $.ajax({
-            url: "/ajax/demo_ajax_v2_addition", // the endpoint
+            url: "/ajax/demo_ajax_v2_addition/", // the endpoint
             type: "POST", // http method
             data: {
                 v2_addend1: $('input[name="v2_addend1"]').val(),
